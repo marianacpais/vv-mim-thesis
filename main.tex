@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=3 cm]{geometry}
+\usepackage[11pt]{moresize}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{textcomp}
+\usepackage{plantuml}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{tocloft}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{notoccite}
+\usepackage{hyperref}
+
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\cleardoublepage
+\definecolor{LightGray}{gray}{0.9}
+
+\newlength{\mylen}
+\renewcommand{\cftfigpresnum}{Figure }
+\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
+\addtolength{\cftfignumwidth}{\mylen}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\includepdf[pages={1}]{media/cover.pdf}
+
+\begin{titlepage}
+  \centering
+  \vspace*{4cm}
+
+  {\huge\bfseries Visual Viper: A Portable Visualization Library for Streamlined Scientific Communication \par}
+
+  \vspace{1.5cm}
+
+  {\Large Mariana Canelas-Pais\par}
+
+  \vspace{1cm}
+
+  {\large \textbf{Supervisors:}\\ Tiago Taveira-Gomes\\ Ricardo Cruz-Correia \par}
+
+  \vspace{2cm}
+
+  {\large Work Submitted for the Acquisition of the \\Master's Degree in Medical Informatics\par}
+
+  \vfill
+
+\end{titlepage}
+
+\includepdf[pages={1}]{media/blank.pdf}
+\pagenumbering{roman}
+
+\thispagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{flushright}
+    \textit{To my son,} \\
+    \textit{António}
+\end{flushright}
+
+\vspace*{\fill}
+
+\newpage
+\includepdf[pages={1}]{media/blank.pdf}
+
+
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoflistings
+\renewcommand{\thesection}{\Roman{section}}
+\newpage
+\input{00_abstract.tex}
+\newpage
+\input{01_acknowledgements.tex}
+\newpage
+\input{02_abbreviations.tex}
+\renewcommand{\thesection}{\arabic{section}}
+\pagenumbering{arabic}
+\setcounter{section}{0}
+\newpage
+\input{03_introduction.tex}
+\newpage
+\input{04_background.tex}
+\newpage
+\input{05_methodology.tex}
+\newpage
+\input{06_development.tex}
+\newpage
+\input{07_architecture.tex}
+\newpage
+\input{08_implementation.tex}
+\newpage
+\input{09_demonstration.tex}
+\newpage
+\input{10_evaluation.tex}
+\newpage
+\input{11_discussion.tex}
+\newpage
+\input{12_conclusion.tex}
+\newpage
+\bibliography{bib}
+\bibliographystyle{unsrt}
+\includepdf[pages={1}]{media/blank.pdf}
+\includepdf[pages={2}]{media/cover.pdf}
+
+\end{document}

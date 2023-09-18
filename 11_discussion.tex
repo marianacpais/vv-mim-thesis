@@ -1,0 +1,83 @@
+\section{Discussion}\label{discussion}
+
+The earlier sections provided an in-depth look at the system
+I\textquotesingle ve developed, focusing on its architecture, features,
+and the evaluation metrics that attest to its performance. This
+discussion aims to offer a comprehensive reflection on this work,
+examining its current limitations, potential for future development, and
+the broader implications it could have in academic and healthcare
+contexts.
+
+\subsection{Integration in Academic and Healthcare
+Contexts}\label{integration-in-academic-and-healthcare-contexts}
+
+The ability to dynamically create and update
+charts like Forest Plots could be invaluable in both educational
+settings and medical research. For example, the tool could be integrated
+into academic courses focusing on statistical methods, epidemiology, or
+healthcare management, offering students hands-on experience with data
+visualization. In healthcare settings, the system could aid in real-time
+data tracking and analytics, which is crucial in making timely and
+data-backed decisions. The application\textquotesingle s modularity and
+the possibility of developing specific plugins make it highly adaptable
+to different academic and clinical use-cases.
+
+\subsection{Deployment Options}\label{deployment-options}
+
+As it currently stands, the system operates solely in a local
+environment. While this setup serves its purpose for small-scale,
+individual projects, it\textquotesingle s limited in terms of
+scalability and ease of integration into larger workflows. Transitioning
+to a cloud-based service could effectively address these limitations.
+
+AWS Lambda offers an appealing solution for several reasons. First, it
+eliminates the need to manage servers or clusters, allowing the focus to
+remain on code execution. This is particularly beneficial because you
+only pay for the computation time used, making it a cost-effective
+choice. Lambda can also automatically respond to code execution requests
+on any scale, from a few events per day to hundreds of thousands per
+second, which makes it well-suited for projects with variable demand
+\cite{50}.
+
+\subsection{Limitations}\label{limitations}
+
+One limitation of the current system is that the developed plugins are
+inherently designed to suit the specific workflow requirements of the
+company where the author works. This could pose challenges in adapting
+the tool for more generalized use-cases. To enhance the
+system\textquotesingle s utility across various applications, it would
+be necessary to either develop additional plugins or modify the existing
+ones to accommodate different configuration parameters.
+
+Another significant limitation remains in terms of deploying charts that
+handle vector graphics, which would allow researchers to fine-tune the
+charts intuitively. We initially considered Figma as a potential
+platform for deployment, but the Figma API is predominantly read-only.
+It permits only writing comments but restricts manipulating graphical
+elements directly. This gap opens up a possibility for future work in
+finding or creating a more versatile platform for chart deployment.
+
+\subsection{Planned Future
+Developments}\label{planned-future-developments}
+
+While our focus has been on the Forest Plot plugin due to its prominence
+in our current large-scale projects, such as one that involves creating
+360 Forest Plots, we acknowledge the need for additional chart types.
+Upcoming releases could include plugins for survival charts, bar charts,
+and Sankey diagrams.
+
+To make the system more user-friendly, we aim to develop a Command Line
+Interface (CLI). A CLI would streamline the user experience by providing
+a straightforward way to configure various system parameters, ideally
+reducing the initial setup time.
+
+\subsection{Software Development Learning
+Insights}\label{software-development-learning-insights}
+
+Another important outcome of this project is the experience gained in
+software development methodologies and best practices. While
+architecting the system, there was an emphasis on employing effective
+development paradigms and applying established design patterns. Overall,
+the development process served as a practical case study in applying a
+blend of software engineering principles, development paradigms, and
+data structures to create a robust and scalable data visualization tool.

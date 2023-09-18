@@ -1,0 +1,466 @@
+\section{Methodology}\label{methodology}
+
+The methodology section serves as a roadmap detailing the design,
+development, and evaluation of the VV Python library. The objective here
+is to offer comprehensive insights into the technical aspects of VV,
+elucidating the rationale behind various design and architectural
+choices, as well as the methods used for implementation and assessment.
+Given that this library aims to bridge a gap in healthcare data
+visualization, especially in handling big data and providing
+customizable solutions for automation, it is crucial to understand the
+techniques and technologies that make it both functional and scalable.
+
+This section will start by explaining the basic ideas behind the VV
+project. Then, we\textquotesingle ll get into the actual development
+aspects, including our use of Object-Oriented Programming (OOP) and
+Test-Driven Development (TDD). Lastly, we will explore how the library
+was evaluated, describing the metrics and methods used during the
+evaluation phase.
+
+\subsection{Requirement Analysis}\label{requirement-analysis}
+
+This section outlines the key functions and quality features expected of
+the VV system. It provides a set of clear requirements that will guide
+the design and implementation stages of the project. To enhance the
+system\textquotesingle s effectiveness and ease of use, we present
+selected use cases that illustrate how VV will interact with other
+systems for better integration in the broader data visualization
+landscape. In short, this section sets the foundational requirements
+that will guide the development efforts.
+
+\subsubsection{User Stories}\label{user-stories}
+
+User stories serve as a vehicle for capturing product functionality from
+the end user\textquotesingle s perspective. These stories encapsulate
+discrete system features in a format that is easy to read and understand
+by both non-technical stakeholders and the development team
+\cite{37}\cite{38}. In the
+context of VV, a system designed to automate the rendering of graphical
+charts from clinical research data, the user stories described here are
+aimed to outline the essential features and functionalities that satisfy
+the needs of different roles involved in clinical research.
+
+\paragraph{Scope}\label{scope}
+
+The following user stories are specifically tailored to the needs of
+clinical researchers, medical writers, data analysts, and system
+administrators who are the key stakeholders of the VV system. They focus
+on tasks related to data visualization, report generation, and system
+management within the context of clinical research.
+
+\paragraph{Stakeholder Definitions}\label{stakeholder-definitions}
+
+\begin{itemize}
+\item
+  \textbf{Clinical Researcher}: A professional conducting clinical
+  studies.
+\item
+  \textbf{Medical Writer}: A professional responsible for creating
+  documents that describe research results, product use, and other
+  scientific dissemination outlets.
+\item
+  \textbf{Data Analyst}: A person responsible for interpreting complex
+  clinical data sets.
+\item
+  \textbf{Data Scientist}: A professional who uses scientific methods,
+  processes, algorithms, and systems to extract insights and knowledge
+  from structured and unstructured data.
+\item
+  \textbf{System Administrator}: A person responsible for managing and
+  maintaining the system infrastructure, including VV.
+\end{itemize}
+
+\paragraph{Story 1: Batch Rendering of Clinical
+Charts}\label{story-1-batch-rendering-of-clinical-charts}
+
+\begin{itemize}
+\item
+  \textbf{As a} clinical researcher/data scientist,
+\item
+  \textbf{I want} VV to batch render multiple charts from automatically
+  generated clinical reports,
+\item
+  \textbf{So that} a large volume of data can be visually represented
+  quickly and efficiently.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should be able to accept multiple clinical reports as input.
+  \item
+    System should be able to render charts in batches without manual
+    intervention.
+  \item
+    Rendered charts should accurately represent the data from the
+    clinical reports.
+  \item
+    System should provide an option for selecting the types of charts to
+    be rendered (bar, line, etc.).
+  \item
+    Batch rendering process should complete within a reasonable time
+    frame (e.g., under 5 minutes for 50 reports).
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 2: Deployment to Miro for
+Triage}\label{story-2-deployment-to-miro-for-triage}
+
+\begin{itemize}
+\item
+  \textbf{As a} clinical researcher/data scientist,
+\item
+  \textbf{I want} VV to deploy rendered charts directly to specific
+  boards in Miro,
+\item
+  \textbf{So that} they can be quickly triaged alongside tabular
+  reports.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should integrate with Miro API.
+  \item
+    System should be able to send rendered charts to specified Miro
+    boards.
+  \item
+    Rendered charts should appear on the Miro boards in a layout that
+    facilitates triage.
+  \item
+    Charts should be deployed to Miro boards without manual
+    intervention.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 3: Export Charts for Research
+Documents}\label{story-3-export-charts-for-research-documents}
+
+\begin{itemize}
+\item
+  \textbf{As a} medical writer,
+\item
+  \textbf{I want} VV to export rendered charts in formats suitable for
+  academic manuscripts, posters, and other research documents,
+\item
+  \textbf{So that} the visual data complements the written content.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should offer multiple export formats such as PNG, JPEG, SVG,
+    etc.
+  \item
+    Exported charts should maintain high resolution and quality.
+  \item
+    System should allow for batch export of multiple charts.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 4: Inclusion of Supplementary
+Material}\label{story-4-inclusion-of-supplementary-material}
+
+\begin{itemize}
+\item
+  \textbf{As a} clinical researcher/data scientist,
+\item
+  \textbf{I want} VV to render charts that can be included as
+  supplementary material when publishing,
+\item
+  \textbf{So that} we can increase the transparency of our research.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should allow rendering of charts that are suitable for
+    supplementary material in terms of quality and resolution.
+  \item
+    System should allow for easy categorization or labeling of such
+    charts for supplementary material.
+  \item
+    Charts should be exportable in a format accepted by major research
+    publications.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 5: Automated Data
+Retrieval}\label{story-5-automated-data-retrieval}
+
+\begin{itemize}
+\item
+  \textbf{As a} data analyst,
+\item
+  \textbf{I want} VV to automatically retrieve data from predefined
+  clinical report formats,
+\item
+  \textbf{So that} I don\textquotesingle t have to manually input data
+  for chart rendering.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should be able to identify and read predefined clinical
+    report formats.
+  \item
+    System should accurately extract relevant data fields from these
+    reports.
+  \item
+    Data retrieval should happen automatically through API calls.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 6: Customization of Chart
+Types}\label{story-6-customization-of-chart-types}
+
+\begin{itemize}
+\item
+  \textbf{As a} clinical researcher/data scientist,
+\item
+  \textbf{I want} to specify the type of chart (bar, line, scatter,
+  etc.) VV should render,
+\item
+  \textbf{So that} the chart is most appropriate for the data being
+  represented.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should offer a range of chart types (bar, forest plot,
+    survival, etc.).
+  \item
+    Users should be able to easily select the desired chart through
+    configuration.
+  \item
+    Rendered charts should accurately represent the selected chart type.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 7: Logging and
+Monitoring}\label{story-7-logging-and-monitoring}
+
+\begin{itemize}
+\item
+  \textbf{As a} system administrator,
+\item
+  \textbf{I want} VV to keep logs of all chart rendering activities,
+\item
+  \textbf{So that} I can monitor system performance and troubleshoot
+  issues.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should maintain logs for each chart rendering activity.
+  \item
+    Logs should include timestamps, types of charts rendered, and any
+    errors or warnings.
+  \item
+    Logs should be easily accessible for review and analysis.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Story 8: Re-run Chart Rendering with Updated
+Data}\label{story-8-re-run-chart-rendering-with-updated-data}
+
+\begin{itemize}
+\item
+  \textbf{As a} clinical researcher/data scientist/medical writer,
+\item
+  \textbf{I want} to re-run chart rendering when new data is available,
+\item
+  \textbf{So that} my visual representations are always up-to-date.
+\item
+  \textbf{Acceptance Criteria}:
+
+  \begin{itemize}
+  \item
+    System should allow for easy updating of data sources.
+  \item
+    Users should be able to initiate re-rendering without having to redo
+    the entire setup.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Non-functional
+Requirements}\label{non-functional-requirements}
+
+The non-functional requirements for VV aim to outline the quality
+attributes the system should possess. These are essential aspects that
+define how well the system performs its functions rather than what
+functions it performs. They encompass characteristics like modularity,
+error handling, and auditability, among others. These requirements are
+especially critical in ensuring that VV is not only functional but also
+efficient, maintainable, and adaptable to various environments and
+use-cases. Below is a list of the non-functional requirements we deem
+essential for the system:
+
+\paragraph{System Architecture}\label{system-architecture}
+
+\begin{itemize}
+\item
+  \textbf{Modularity}: The system should be modular to allow for easier
+  debugging and updating of individual components.
+\item
+  \textbf{Extensibility}: Designed in a way to easily allow the addition
+  of new functionalities.
+\end{itemize}
+
+\paragraph{Usability and User
+Experience}\label{usability-and-user-experience}
+
+\begin{itemize}
+\item
+  \textbf{Configurability}: Users should be able to easily configure
+  chart rendering options regardless of the environment (API, module,
+  terminal).
+\item
+  \textbf{Environment Agnosticism}: Should be usable as an importable
+  Python module, accessible via web API, or through the terminal.
+\end{itemize}
+
+\paragraph{Reliability}\label{reliability}
+
+\begin{itemize}
+\item
+  \textbf{Error Handling}: The system should be able to gracefully
+  handle errors and exceptions, providing useful error messages.
+\end{itemize}
+
+\paragraph{Maintenance and Support}\label{maintenance-and-support}
+
+\begin{itemize}
+\item
+  \textbf{Documentation}: All code should be well-documented, and system
+  documentation should be easily accessible for maintenance activities.
+\item
+  \textbf{Auditability}: Should provide logging features to keep track
+  of data processing and rendering activities.
+\end{itemize}
+
+\subsection{Applied Technical Foundations and Development Paradigms}\label{technical-foundations-and-development-paradigms}
+
+The objective of VV is the automation of data visualization, helping
+with the challenges in handling large and complex data sets common in
+healthcare. Concurrently, the project serves an educational purpose,
+offering the developer a framework to explore and learn fundamental
+software development paradigms. This educational aspect makes it crucial
+to ensure that the project adheres to established coding practices and
+methodologies, making it both a practical tool for data visualization
+and a case study in applying robust software development principles.
+
+The following sections will delve into the specifics of these
+foundational principles, revealing how they guided the choices in
+architecture and functionalities in VV.
+
+\subsubsection{Modularity}\label{modularity}
+
+In VV, modularity is a fundamental element guiding our design approach.
+This ensures that each module is a self-contained unit with well-defined
+interfaces, enhancing both reusability and portability, attributes
+highly valued in specialized fields like healthcare informatics
+\cite{39}.
+
+\subsubsection{Object-Oriented Programming
+(OOP)}\label{object-oriented-programming-oop}
+
+In the VV library, OOP serves as a pivotal architectural choice, both
+for the developer\textquotesingle s educational enrichment and the
+system\textquotesingle s overall functionality and extensibility.
+Employing OOP facilitates encapsulation, which allows for the bundling
+of data and methods that operate on that data within single units or
+classes.
+
+OOP also uses inheritance, enabling code reusability and abstraction.
+For instance, different types of charts, be it a bar chart, a forest
+plot, or a survival plot, can be represented as individual classes.
+These classes can contain methods to set chart properties, draw axes,
+and render the data. Since each chart type may have common
+characteristics such as a title or axes labels, inheritance allows these
+shared features to be abstracted into a parent class. Specific chart
+types can then inherit from this parent class, enabling them to reuse
+common code while still allowing for their own specialized features.
+Furthermore, different deployment targets, like cloud storage or Miro
+boards, can also be abstracted into separate classes, encapsulating the
+methods required for deploying visualizations to these locations. This
+makes the system adaptable and easier to integrate with new deployment
+options as needs evolve.
+
+\subsubsection{Test-Driven Development
+(TDD)}\label{test-driven-development-tdd}
+
+TDD serves as a rigorous verification mechanism that aligns with the
+project's objective of delivering a reliable and high-quality tool.
+Based on the review on the impact of TDD on program design
+and software quality, as well as the educational benefits for the
+author, we have selected TDD as a methodology for our software
+development project. This hands-on exposure is expected to be invaluable in future projects
+and particularly beneficial when collaborating within larger teams that
+also utilize TDD.
+
+To implement TDD in this project, we selected pytest as the testing
+library for its feature-rich environment, ease of use, and compatibility
+with various Python frameworks. It provides detailed failure reports to
+streamline debugging, and its straightforward syntax is especially
+beneficial for those new to TDD
+\cite{40}.
+
+\subsection{Evaluation Metrics and
+Methods}\label{evaluation-metrics-and-methods}
+
+The evaluation phase for the VV Python library was designed to assess
+both the functional capabilities of the library and its impact on
+workflow efficiency. The key performance indicators (KPIs) used for this
+evaluation were "Time to First Chart Draft" and "Time to Final Chart,"
+designed to capture the time-efficiency gains enabled by the VV library.
+
+\subsubsection{Time to First Chart
+Draft}\label{time-to-first-chart-draft}
+
+This metric captures the time needed from receiving the initial dataset
+to generating the first draft of a chart. For the manual method, this
+involves gathering values for relevant measures, preparing a Vega-Lite
+JSON definition, populating the JSON with the data and adjusting
+necessary parameters.
+
+\subsubsection{Time to Final Chart}\label{time-to-final-chart}
+
+This metric gauges the time from the receipt of the initial data to the
+point where the chart is exported in the appropriate format (e.g., SVG)
+and uploaded to a platform like Google Drive and included in a Miro
+board for further analysis and comparison. This encompasses the entire
+lifecycle of chart production and is intended to capture any efficiency
+gains that may be achieved through the VV library.
+
+\subsubsection{Data Sources for
+Evaluation}\label{data-sources-for-evaluation}
+
+The primary data source for these evaluations is time-tracking data from
+MTG Research and Development Lab activities. This data focuses on chart
+development for academic papers and is an integral part of our
+methodology. It has been recorded using a tracker within the Monday.com
+platform, which is the project management tool employed by the company
+for all R\&D activities. This time-tracking data from past projects,
+where chart generation was performed manually, serves as a comparative
+baseline for evaluating the VV Python library\textquotesingle s
+effectiveness.
+
+\subsubsection{Simulation for Adjustment for Fatigue and Human
+Intervention}\label{simulation-for-adjustment-for-fatigue-and-human-intervention}
+
+To provide a comprehensive evaluation of the VV Python
+library\textquotesingle s efficiency in chart creation, we extended our
+analysis by including a simulation that includes considerations for task
+fatigue and additional human intervention for validation. For this
+exercise, we focused on the "Time-to-Final-Chart" metric, which captures
+the total time needed to finalize a chart, accounting for all
+adjustments and confirmations.
+
+The analysis was conducted using R (version 4.2.3)
+\cite{41}, and visualizations
+were generated using the ggplot2 package
+\cite{13}.
