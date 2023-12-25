@@ -1,5 +1,8 @@
-# Folders
+# Other Folders
 /temp
+
+# Other Files
+.DS_Store
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
