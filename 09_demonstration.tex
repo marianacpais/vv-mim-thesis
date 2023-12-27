@@ -1,12 +1,14 @@
-\section{Workflow Demonstration}\label{workflow-demonstration}
+\chapter{Workflow Demonstration}\label{workflow-demonstration}
+
+\minitoc
 
 To provide a clearer understanding of how the VV library operates in a
-real-world scenario, this section walks through a complete workflow of
+real-world scenario, this chapter walks through a complete workflow of
 data visualization automation. The illustration starts from obtaining
 data from a specific data source to rendering a chart and ultimately
 deploying it to a Miro board and Google Drive.
 
-\subsection{Stage 1: Data Retrieval}\label{stage-1-data-retrieval}
+\section{Stage 1: Data Retrieval}\label{stage-1-data-retrieval}
 
 In this example, we consider healthcare data obtained from Google
 Spreadsheets, which serve as our data source (see Figure \ref{fig:sheets_folder}). The
@@ -32,7 +34,7 @@ transformed into a format suitable for chart rendering.
   \label{fig:ss}
 \end{figure}
 
-\subsection{Stage 2: Chart
+\section{Stage 2: Chart
 Configuration}\label{stage-2-chart-configuration}
 
 Once the data is retrieved and prepared, the next step involves defining
@@ -144,7 +146,7 @@ example we will use only three covariates.
   \label{listing:14}
   \end{code}
 
-\subsection{Stage 3: Chart Rendering}\label{stage-3-chart-rendering}
+\section{Stage 3: Chart Rendering}\label{stage-3-chart-rendering}
 
 With the data properly set and the chart configuration in place, we are
 now ready to render the Forest Plot. To achieve this, we make use of
@@ -175,7 +177,7 @@ looks like.
   \label{fig:forest}
 \end{figure}
 
-\subsection{Stage 4: Deployment}\label{stage-4-deployment}
+\section{Stage 4: Deployment}\label{stage-4-deployment}
 
 The final stage of the workflow involves deploying the rendered Forest
 Plot to a Miro board and Google Drive. To achieve this, the VV library

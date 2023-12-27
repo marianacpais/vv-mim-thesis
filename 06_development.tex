@@ -1,7 +1,9 @@
-\section{Development Environment and
+\chapter{Development Environment and
 Tools}\label{development-environment-and-tools}
 
-In this section, the development environment and tools used in the
+\minitoc
+
+In this chapter, the development environment and tools used in the
 construction of VV are discussed. The selection of this environment went
 beyond mere technical suitability for the project requirements; it also
 served as an educational framework for the author. The project was not
@@ -13,7 +15,7 @@ utility in skill acquisition. Through the development process, the
 author gained valuable insights into effective software development
 practices.
 
-\subsection{Development Environment}\label{development-environment}
+\section{Development Environment}\label{development-environment}
 
 The development environment consisted of a macOS Ventura machine,
 running version 13.3, powered by an Apple M2 Pro processor with 16GB
@@ -40,7 +42,7 @@ marketplace. Particularly beneficial was the use of the VSCode Live
 extension, which facilitated live coding sessions for tutoring and
 collaborative development.
 
-\subsubsection{Docker for
+\subsection{Docker for
 Containerization}\label{docker-for-containerization}
 
 The use of Docker for containerization was a strategic decision aimed at
@@ -66,7 +68,7 @@ containerization and DevOps. This hands-on experience was valuable for
 both the project\textquotesingle s success and educational objectives,
 making Docker an optimal choice for this project.
 
-\subsection{Version Control}\label{version-control}
+\section{Version Control}\label{version-control}
 
 GitLab (Version 16.3) was employed as the platform to host the remote
 repository for this project, in conjunction with the version control
@@ -115,7 +117,7 @@ Furthermore, GitLab was advantageous for several other reasons, such as:
   development process, with further elaboration in the CI/CD subsection.
 \end{itemize}
 
-\subsection{Continuous Integration and Deployment
+\section{Continuous Integration and Deployment
 (CI/CD)}\label{continuous-integration-and-deployment-cicd}
 
 The implementation of Continuous Integration and Deployment (CI/CD)
@@ -130,14 +132,14 @@ deployment.
 Note that all make commands used in this pipeline are elaborated upon in
 the Build Automation subsection.
 
-\subsubsection{CI/CD Configuration}\label{cicd-configuration}
+\subsection{CI/CD Configuration}\label{cicd-configuration}
 
 The CI/CD pipeline was configured using a .gitlab-ci.yaml file, which
 specifies the environment and commands that GitLab\textquotesingle s
 CI/CD runners should execute. The pipeline was designed to run on a
 Python 3.10 environment and included two main jobs: test and pages.
 
-\subsubsection{Before Script and
+\subsection{Before Script and
 Dependencies}\label{before-script-and-dependencies}
 
 The before\_script section provides the initial setup, which includes
@@ -145,14 +147,14 @@ updating package lists and installing the FreeTDS dependency required
 for the project. Following this, the make install command sets up the
 necessary Python packages.
 
-\subsubsection{Test Job}\label{test-job}
+\subsection{Test Job}\label{test-job}
 
 The test job runs the test suite and generates a code coverage report.
 It uses the make test-ci script, capturing the code coverage percentage
 as well as producing a JUnit XML report. These artifacts are then stored
 and can be accessed for further analysis.
 
-\subsubsection{Pages Job}\label{pages-job}
+\subsection{Pages Job}\label{pages-job}
 
 The pages job runs only on the main branch and is responsible for
 generating project documentation. The documentation is built using the
@@ -213,7 +215,7 @@ pages:
   \end{code}
 
 
-\subsubsection{Pedagogical Implications}\label{pedagogical-implications}
+\subsection{Pedagogical Implications}\label{pedagogical-implications}
 
 The opportunity to configure and operate a CI/CD pipeline through GitLab
 has valuable educational benefits, offering the opportunity to
@@ -231,15 +233,15 @@ completed.
   \label{fig:commit}
 \end{figure}
 
-\subsection{Build Automation}\label{build-automation}
+\section{Build Automation}\label{build-automation}
 
-In this subsection, the utility of build automation is discussed,
+In this section, the utility of build automation is discussed,
 focusing on the role of the Makefile in project development. Build
 automation offers both convenience and standardization, aiding in the
 quick execution of repetitive tasks and ensuring that all collaborators
 are using the same set of commands.
 
-\subsubsection{Makefile}\label{makefile}
+\subsection{Makefile}\label{makefile}
 
 The Makefile serves as the framework for build automation in this
 project. It consists of shorthand commands that encapsulate complex or
@@ -303,7 +305,7 @@ push:
   \label{listing:2}
   \end{code}
 
-\subsubsection{Commands Overview}\label{commands-overview}
+\subsection{Commands Overview}\label{commands-overview}
 
 \textbf{Docker Configuration}
 
@@ -367,7 +369,7 @@ push:
   the remote repository.
 \end{itemize}
 
-\subsection{Choice of Programming Language and Visualization
+\section{Choice of Programming Language and Visualization
 Libraries}\label{choice-of-programming-language-and-visualization-libraries}
 
 Choosing the right programming language and libraries is crucial for a
@@ -378,7 +380,7 @@ Python and Vega Lite for the Visual Viper (VV) library, focusing on
 their features, community support, and fit for this
 project\textquotesingle s needs.
 
-\subsubsection{Python}\label{python}
+\subsection{Python}\label{python}
 
 Python was chosen for its widespread adoption in the field of data
 science. It is a high-level, interpreted language that is not only easy
@@ -388,7 +390,7 @@ available for tasks ranging from web development to machine learning.
 Importantly, Python is open-source, offering an extra layer of
 flexibility and community engagement.
 
-\subsubsection{Vega Lite}\label{vega-lite}
+\subsection{Vega Lite}\label{vega-lite}
 
 We\textquotesingle ve selected Vega-Lite as our visualization tool
 influenced by various factors, most importantly API/tool design and
@@ -440,7 +442,7 @@ Figure \ref{fig:plots} shows some examples of charts generated using Vega-Lite, 
 \end{figure}
 
 
-\subsection{Documentation}\label{documentation}
+\section{Documentation}\label{documentation}
 
 The documentation for the Visual Viper (VV) library was developed using
 Sphinx, a documentation generator that transforms reStructuredText

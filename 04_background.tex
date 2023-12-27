@@ -1,12 +1,10 @@
-\section{Background}\label{background}
+\chapter{Background}\label{background}
 
-This section provides a concise assessment of the literature relevant to
-data visualization, emphasizing its role in healthcare research, as well
-as a brief description of some technical foundations of software
-development. For this non-systematic review we used several academic
-resources such as PubMed, IEEE Xplore, Scopus, and arXiv.org.
+\minitoc
 
-\subsection{Data Visualization}\label{data-visualization}
+This chapter presents an overview of the core concepts critical to the foundation of this project, centering specifically on data visualization within the context of healthcare research. Additionally, it outlines the crucial technical tenets that form the backbone of software development, important for understanding the subsequent material.
+
+\section{Data Visualization}\label{data-visualization}
 
 Data visualization serves various aims, such as exploration,
 interpretation, and communication of data, by harnessing human visual
@@ -18,7 +16,7 @@ diverse requirements and challenges seen in healthcare research, where
 visualization tools must be both scientifically rigorous and accessible
 for diverse stakeholders.
 
-\subsubsection{Historical Development and
+\subsection{Historical Development and
 Evolution}\label{historical-development-and-evolution}
 
 Historically, visualization techniques have been distributed mainly as
@@ -31,7 +29,20 @@ These frameworks assist in crafting custom visual representations,
 providing a more flexible toolset for different applications, including
 healthcare research \cite{5}.
 
-\subsubsection{Design Choices}\label{design-choices}
+The evolution of visualization tools and techniques in healthcare is a testament to the field's ongoing quest to enhance the understanding and communication of complex data. The story begins with an iconic figure in healthcare history: Florence Nightingale, whose innovative work during the Crimean War laid the groundwork for modern data visualization. Nightingale's use of polar area diagrams, or coxcombs, revolutionized the way data was presented to the British parliament and played a pivotal role in reforming military and public health practices. Figure \ref{fig:coxcomb} illustrates Nightingale's visualization of mortality causes among soldiers, distinguishing deaths due to preventable diseases, wounds, and other causes through a vivid color scheme. This early example underscores the power of visualization to not only convey statistics but also to advocate for change \cite{soa7}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{media/fig20.jpeg}
+  \caption{Nightingale's coxcomb diagram on causes of mortality in the British army. Reproduced from O'connor \textit{et al} (2017)\cite{soa7}.}
+  \label{fig:vsc}
+\end{figure}
+
+Today's healthcare industry, driven by data and evidence-based practice, continues to rely on the effective presentation of information. The plethora of digital health data from electronic medical records, telehealth systems, and wearable devices necessitates innovative visualization approaches to inform decisions and policies.
+
+The science of data visualization has since matured, offering sophisticated representations of genomic, clinical, and personal health data to facilitate quick assimilation of information by diverse stakeholders.
+
+\subsection{Design Choices}\label{design-choices}
 
 To appreciate the role of visualizations in today\textquotesingle s
 research landscape, it\textquotesingle s critical to analyze their
@@ -53,7 +64,7 @@ visual design principles can improve the effectiveness and consistency
 of visualizations, particularly for analysts working with their own data
 \cite{8}.
 
-\subsubsection{{Graphics Grammars }}\label{graphics-grammars}
+\subsection{Graphics Grammars}\label{graphics-grammars}
 
 One foundational line of research in this field has been the systematic
 study of structural theories of graphics, which is thought to have been
@@ -124,14 +135,14 @@ underscores the necessity for specialized tools capable of adapting to
 the complex demands of healthcare research. VV aims to address some of
 these needs by automating the visualization creation process.
 
-\subsection{Technical Foundations and Development
+\section{Technical Foundations and Development
 Paradigms}\label{technical-foundations-and-development-paradigms}
 
 This section will outline some key principles that have guided the
 architecture and functionalities of robust and scalable software
 systems.
 
-\subsubsection{Modularity}\label{modularity}
+\subsection{Modularity}\label{modularity}
 
 The idea of modularity has a long history in the field of software
 development. As early as 1970, Gouthier and Pont outlined the critical
@@ -175,7 +186,7 @@ costs \cite{19}. In fields
 like healthcare, the positive impacts of adopting a modular design
 philosophy can be particularly impactful.
 
-\subsubsection{Object-Oriented Programming
+\subsection{Object-Oriented Programming
 (OOP)}\label{object-oriented-programming-oop}
 
 OOP has been a common paradigm for solving complex tasks through
@@ -211,7 +222,7 @@ SOLID principles have been proposed, promoting design that is easy to
 manage and scale
 \cite{24}\cite{28}.
 
-\subsubsection{Test-Driven Development
+\subsection{Test-Driven Development
 (TDD)}\label{test-driven-development-tdd}
 
 The field of software development offers a variety of methodologies
@@ -250,7 +261,7 @@ paradigms such as Agile, Scrum, XP, and Lean. This adaptability offers
 flexibility in project management approaches
 \cite{31}.
 
-\subsubsection{Python Programming
+\subsection{Python Programming
 Language}\label{python-programming-language}
 
 The landscape of programming languages is ever-changing, but Python has
@@ -298,7 +309,7 @@ their unique and complementary roles in software development
   \label{fig:prog_lang}
 \end{figure}
 
-\subsubsection{Docker for
+\subsection{Docker for
 Containerization}\label{docker-for-containerization}
 
 With Docker, each part of an application, along with its dependencies

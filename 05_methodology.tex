@@ -1,6 +1,8 @@
-\section{Methodology}\label{methodology}
+\chapter{Methodology}\label{methodology}
 
-The methodology section serves as a roadmap detailing the design,
+\minitoc
+
+The methodology chapter serves as a roadmap detailing the design,
 development, and evaluation of the VV Python library. The objective here
 is to offer comprehensive insights into the technical aspects of VV,
 elucidating the rationale behind various design and architectural
@@ -10,14 +12,14 @@ visualization, especially in handling big data and providing
 customizable solutions for automation, it is crucial to understand the
 techniques and technologies that make it both functional and scalable.
 
-This section will start by explaining the basic ideas behind the VV
+This chapter will start by explaining the basic ideas behind the VV
 project. Then, we\textquotesingle ll get into the actual development
 aspects, including our use of Object-Oriented Programming (OOP) and
 Test-Driven Development (TDD). Lastly, we will explore how the library
 was evaluated, describing the metrics and methods used during the
 evaluation phase.
 
-\subsection{Requirement Analysis}\label{requirement-analysis}
+\section{Requirement Analysis}\label{requirement-analysis}
 
 This section outlines the key functions and quality features expected of
 the VV system. It provides a set of clear requirements that will guide
@@ -28,7 +30,7 @@ systems for better integration in the broader data visualization
 landscape. In short, this section sets the foundational requirements
 that will guide the development efforts.
 
-\subsubsection{User Stories}\label{user-stories}
+\subsection{User Stories}\label{user-stories}
 
 User stories serve as a vehicle for capturing product functionality from
 the end user\textquotesingle s perspective. These stories encapsulate
@@ -77,7 +79,7 @@ Charts}\label{story-1-batch-rendering-of-clinical-charts}
 \item
   \textbf{As a} clinical researcher/data scientist,
 \item
-  \textbf{I want} VV to batch render multiple charts from automatically
+  \textbf{I want} to batch render multiple charts from automatically
   generated clinical reports,
 \item
   \textbf{So that} a large volume of data can be visually represented
@@ -110,7 +112,7 @@ Triage}\label{story-2-deployment-to-miro-for-triage}
 \item
   \textbf{As a} clinical researcher/data scientist,
 \item
-  \textbf{I want} VV to deploy rendered charts directly to specific
+  \textbf{I want} to deploy rendered charts directly to specific
   boards in Miro,
 \item
   \textbf{So that} they can be quickly triaged alongside tabular
@@ -140,7 +142,7 @@ Documents}\label{story-3-export-charts-for-research-documents}
 \item
   \textbf{As a} medical writer,
 \item
-  \textbf{I want} VV to export rendered charts in formats suitable for
+  \textbf{I want} to export rendered charts in formats suitable for
   academic manuscripts, posters, and other research documents,
 \item
   \textbf{So that} the visual data complements the written content.
@@ -165,7 +167,7 @@ Material}\label{story-4-inclusion-of-supplementary-material}
 \item
   \textbf{As a} clinical researcher/data scientist,
 \item
-  \textbf{I want} VV to render charts that can be included as
+  \textbf{I want} to render charts that can be included as
   supplementary material when publishing,
 \item
   \textbf{So that} we can increase the transparency of our research.
@@ -192,7 +194,7 @@ Retrieval}\label{story-5-automated-data-retrieval}
 \item
   \textbf{As a} data analyst,
 \item
-  \textbf{I want} VV to automatically retrieve data from predefined
+  \textbf{I want} to retrieve data from predefined
   clinical report formats,
 \item
   \textbf{So that} I don\textquotesingle t have to manually input data
@@ -220,7 +222,7 @@ Types}\label{story-6-customization-of-chart-types}
   \textbf{As a} clinical researcher/data scientist,
 \item
   \textbf{I want} to specify the type of chart (bar, line, scatter,
-  etc.) VV should render,
+  etc.) to be rendered,
 \item
   \textbf{So that} the chart is most appropriate for the data being
   represented.
@@ -246,7 +248,7 @@ Monitoring}\label{story-7-logging-and-monitoring}
 \item
   \textbf{As a} system administrator,
 \item
-  \textbf{I want} VV to keep logs of all chart rendering activities,
+  \textbf{I want} to keep logs of all chart rendering activities,
 \item
   \textbf{So that} I can monitor system performance and troubleshoot
   issues.
@@ -286,7 +288,7 @@ Data}\label{story-8-re-run-chart-rendering-with-updated-data}
   \end{itemize}
 \end{itemize}
 
-\subsubsection{Non-functional
+\subsection{Non-functional
 Requirements}\label{non-functional-requirements}
 
 The non-functional requirements for VV aim to outline the quality
@@ -342,7 +344,7 @@ Experience}\label{usability-and-user-experience}
   of data processing and rendering activities.
 \end{itemize}
 
-\subsection{Applied Technical Foundations and Development Paradigms}\label{technical-foundations-and-development-paradigms}
+\section{Applied Technical Foundations and Development Paradigms}\label{technical-foundations-and-development-paradigms}
 
 The objective of VV is the automation of data visualization, helping
 with the challenges in handling large and complex data sets common in
@@ -357,7 +359,7 @@ The following sections will delve into the specifics of these
 foundational principles, revealing how they guided the choices in
 architecture and functionalities in VV.
 
-\subsubsection{Modularity}\label{modularity}
+\subsection{Modularity}\label{modularity}
 
 In VV, modularity is a fundamental element guiding our design approach.
 This ensures that each module is a self-contained unit with well-defined
@@ -365,7 +367,7 @@ interfaces, enhancing both reusability and portability, attributes
 highly valued in specialized fields like healthcare informatics
 \cite{39}.
 
-\subsubsection{Object-Oriented Programming
+\subsection{Object-Oriented Programming
 (OOP)}\label{object-oriented-programming-oop}
 
 In the VV library, OOP serves as a pivotal architectural choice, both
@@ -390,7 +392,7 @@ methods required for deploying visualizations to these locations. This
 makes the system adaptable and easier to integrate with new deployment
 options as needs evolve.
 
-\subsubsection{Test-Driven Development
+\subsection{Test-Driven Development
 (TDD)}\label{test-driven-development-tdd}
 
 TDD serves as a rigorous verification mechanism that aligns with the
@@ -409,7 +411,7 @@ streamline debugging, and its straightforward syntax is especially
 beneficial for those new to TDD
 \cite{40}.
 
-\subsection{Evaluation Metrics and
+\section{Evaluation Metrics and
 Methods}\label{evaluation-metrics-and-methods}
 
 The evaluation phase for the VV Python library was designed to assess
@@ -418,7 +420,7 @@ workflow efficiency. The key performance indicators (KPIs) used for this
 evaluation were "Time to First Chart Draft" and "Time to Final Chart,"
 designed to capture the time-efficiency gains enabled by the VV library.
 
-\subsubsection{Time to First Chart
+\subsection{Time to First Chart
 Draft}\label{time-to-first-chart-draft}
 
 This metric captures the time needed from receiving the initial dataset
@@ -427,7 +429,7 @@ involves gathering values for relevant measures, preparing a Vega-Lite
 JSON definition, populating the JSON with the data and adjusting
 necessary parameters.
 
-\subsubsection{Time to Final Chart}\label{time-to-final-chart}
+\subsection{Time to Final Chart}\label{time-to-final-chart}
 
 This metric gauges the time from the receipt of the initial data to the
 point where the chart is exported in the appropriate format (e.g., SVG)
@@ -436,7 +438,7 @@ board for further analysis and comparison. This encompasses the entire
 lifecycle of chart production and is intended to capture any efficiency
 gains that may be achieved through the VV library.
 
-\subsubsection{Data Sources for
+\subsection{Data Sources for
 Evaluation}\label{data-sources-for-evaluation}
 
 The primary data source for these evaluations is time-tracking data from
@@ -449,7 +451,7 @@ where chart generation was performed manually, serves as a comparative
 baseline for evaluating the VV Python library\textquotesingle s
 effectiveness.
 
-\subsubsection{Simulation for Adjustment for Fatigue and Human
+\subsection{Simulation for Adjustment for Fatigue and Human
 Intervention}\label{simulation-for-adjustment-for-fatigue-and-human-intervention}
 
 To provide a comprehensive evaluation of the VV Python

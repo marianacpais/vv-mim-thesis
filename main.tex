@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{book}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=3 cm]{geometry}
 \usepackage[11pt]{moresize}
@@ -26,9 +26,16 @@
 \usepackage{pdfpages}
 \usepackage{notoccite}
 \usepackage{hyperref}
+\usepackage{minitoc}
+\usepackage{emptypage}
 
 \usepackage{xcolor}
 \usepackage{titlesec}
+
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \cleardoublepage
@@ -39,11 +46,24 @@
 \settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
 \addtolength{\cftfignumwidth}{\mylen}
 
+
+\titleformat{name=\chapter,numberless}
+  {\normalfont\Huge\bfseries}{}{0pt}{\Huge}[{\thispagestyle{empty}}]
+
 \setcounter{tocdepth}{2}
 
 \begin{document}
 
+\dominitoc[n]
+
+\mtcsettitle{minitoc}{}
+\mtcsetfont{minitoc}{section}{\bfseries}
+
+\thispagestyle{empty}
+
 \includepdf[pages={1}]{media/cover.pdf}
+
+\thispagestyle{empty}
 
 \begin{titlepage}
   \centering
@@ -67,6 +87,8 @@
 
 \end{titlepage}
 
+\thispagestyle{empty}
+
 \includepdf[pages={1}]{media/blank.pdf}
 \pagenumbering{roman}
 
@@ -85,12 +107,10 @@
 \includepdf[pages={1}]{media/blank.pdf}
 
 
-
-\tableofcontents
 \newpage
 \listoffigures
 \newpage
-\listoflistings
+\listoflistings\thispagestyle{plain}
 \renewcommand{\thesection}{\Roman{section}}
 \newpage
 \input{00_abstract.tex}
@@ -98,6 +118,13 @@
 \input{01_acknowledgements.tex}
 \newpage
 \input{02_abbreviations.tex}
+\newpage
+\clearpage
+\begingroup
+\pagestyle{empty}\cleardoublepage
+\endgroup
+\tableofcontents\thispagestyle{plain}
+\clearpage
 \renewcommand{\thesection}{\arabic{section}}
 \pagenumbering{arabic}
 \setcounter{section}{0}
@@ -112,9 +139,7 @@
 \newpage
 \input{06_development.tex}
 \newpage
-\input{07_architecture.tex}
-\newpage
-\input{08_implementation.tex}
+\input{07_design.tex}
 \newpage
 \input{09_demonstration.tex}
 \newpage
@@ -126,7 +151,7 @@
 \newpage
 \bibliography{bib}
 \bibliographystyle{unsrt}
-\includepdf[pages={1}]{media/blank.pdf}
-\includepdf[pages={2}]{media/cover.pdf}
+\includepdf[pages={1}]{media/blank.pdf}\thispagestyle{empty}
+\includepdf[pages={2}]{media/cover.pdf}\thispagestyle{empty}
 
 \end{document}

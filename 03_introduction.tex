@@ -1,26 +1,20 @@
-\section{Introduction}\label{introduction}
+\chapter{Introduction}\label{introduction}
 
-Healthcare is generating an unprecedented amount of data due to the rise
-in digital technology
-\cite{1,2}. This data,
-ranging from patient records to complex genetic information, holds value
-for various studies, including those related to real-world evidence.
-However, the sheer volume of this data makes manual chart generation and
-updating increasingly impractical. As such, automation is becoming
+\minitoc
+
+\section{Context}
+
+Healthcare is generating an unprecedented amount of data due to the rise in digital technology \cite{1,2}. This data, ranging from patient records to complex genetic information, holds value for various studies, including those related to real-world evidence.
+However, the sheer volume of this data makes manual chart generation and updating increasingly impractical. As such, automation is becoming
 essential for efficient data interpretation in healthcare.
 
 As healthcare increasingly digitizes, the sector is inundated with a
-complex array of data that professionals and researchers must make sense
-of. While visualization tools exist, they often don\textquotesingle t
-address the specific needs of healthcare data or scale well with big
+complex array of data that professionals and researchers must make sense of. While visualization tools exist, they often don\textquotesingle t address the specific needs of healthcare data or scale well with big
 data challenges
-\cite{3,4}. Moreover,
-the manual effort involved in using these tools remains significant.
-Therefore, there\textquotesingle s a growing demand for an automated and
-scalable solution capable of simplifying the generation and deployment
-of relevant visualizations.
+\cite{3,4}. Moreover, the manual effort involved in using these tools remains significant.
+Therefore, there\textquotesingle s a growing demand for an automated and scalable solution capable of simplifying the generation and deployment of relevant visualizations.
 
-\subsection{Objectives}\label{objectives}
+\section{Objectives}\label{objectives}
 
 The aim of this project is to conceive, architect, develop and evaluate
 Visual Viper (VV), a Python library aimed to automate the creation of
@@ -73,33 +67,35 @@ and extensible architecture, enabling the library to adapt to diverse
 data sources and evolving visualization needs, thereby extending its
 lifespan and relevance.
 
-\subsection{Thesis Overview}\label{thesis-overview}
+\section{Thesis Overview}\label{thesis-overview}
 
 This thesis is organized as follows:
 
 \begin{itemize}
 \item
-  \textbf{Introduction}: This section encompasses the background of the
+  \textbf{Introduction}: This chapter encompasses the background of the
   study, problem statement, purpose, research objectives, and
   justification. It serves to establish the context and significance of
   the research.
 \item
-  \textbf{Background}: This section provides a concise assessment of the
+  \textbf{Background}: This chapter provides a concise assessment of the
   literature relevant to data visualization and software development paradigms.
 \item
-  \textbf{Methodology}: This section details the methodologies adopted.
+\textbf{State-of-the-Art}: This chapter conducts a review of the current landscape in visualization tools used in healthcare, and the specific challenges faced. It sets the stage for the development of VV by identifying gaps and opportunities in the existing systems.
+\item
+  \textbf{Methodology}: This chapter details the methodologies adopted.
   It covers aspects like requirement analysis, user stories, and scope
   of the project. Core principles such as modularity, extensibility, and
-  usability are also elaborated in separate subsections.
+  usability are also elaborated in separate sections.
 \item
   \textbf{Development Approach}: Offers an overview of the development
   approach and programming paradigms employed. It discusses possible
   development approaches and discusses the use of Object-Oriented
   Programming and Test-Driven Development.
 \item
-  \textbf{Development Environment and Tools}: In this section, the
+  \textbf{Development Environment and Tools}: In this chapter, the
   various tools utilized during the development process are covered. This includes aspects of Docker containerization, version
-  control through GitLab, and CI/CD pipelines. Furthermore, this section
+  control through GitLab, and CI/CD pipelines. Furthermore, this chapter
   elucidates the build automation process and discusses the Makefile in
   detail.
 \item
@@ -107,19 +103,19 @@ This thesis is organized as follows:
   system's architecture. It discusses the high-level architecture, key
   classes, component interactions, and data flows among components.
 \item
-  \textbf{Implementation Details}: This section delves into the
+  \textbf{Implementation Details}: This chapter delves into the
   technical nuances of the project\textquotesingle s implementation.
 \item
-  \textbf{Workflow Demonstration}: This section provides a demonstration
+  \textbf{Workflow Demonstration}: This chapter provides a demonstration
   of how the VV system operates in a real-world context. The aim is to
   convey both the utility and the user experience of the system.
 \item
-  \textbf{Evaluation Results}: This section analyzes
+  \textbf{Evaluation Results}: This chapter analyzes
   VV\textquotesingle s performance on the specific use cases of Google
   Sheets data retrieval, Forest Plots creation, and deployment to Miro
   Board and Google Drive.
 \item
-  \textbf{Discussion}: This section serves as a platform to review the
+  \textbf{Discussion}: This chapter serves as a platform to review the
   research findings and to propose future recommendations.
 \item
   \textbf{Conclusion}: Summarizes the research and outlines the

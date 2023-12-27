@@ -1,23 +1,10 @@
-\section{State-of-the-Art}\label{state-of-the-art}
+\chapter{State-of-the-Art}\label{state-of-the-art}
 
-\subsection{Evolution of Visualization Tools and Techniques in Healthcare}\label{evolution-of-visualization-tools-and-techniques-in-healthcare}
+\minitoc
 
-The evolution of visualization tools and techniques in healthcare is a testament to the field's ongoing quest to enhance the understanding and communication of complex data. The story begins with an iconic figure in healthcare history: Florence Nightingale, whose innovative work during the Crimean War laid the groundwork for modern data visualization. Nightingale's use of polar area diagrams, or coxcombs, revolutionized the way data was presented to the British parliament and played a pivotal role in reforming military and public health practices. Figure \ref{fig:coxcomb} illustrates Nightingale's visualization of mortality causes among soldiers, distinguishing deaths due to preventable diseases, wounds, and other causes through a vivid color scheme. This early example underscores the power of visualization to not only convey statistics but also to advocate for change \cite{soa7}.
+The development of this chapter is informed by a non-systematic review of literature drawn from various academic databases including PubMed, IEEE Xplore, Scopus, and arXiv.org. This review was aimed at gathering pertinent information to underpin the discussions around real-world evidence and data visualization in healthcare, setting the stage for the development of the VV project.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{media/fig20.jpeg}
-  \caption{Nightingale's coxcomb diagram on causes of mortality in the British army. Reproduced from O'connor \textit{et al} (2017)\cite{soa7}.}
-  \label{fig:vsc}
-\end{figure}
-
-Today's healthcare industry, driven by data and evidence-based practice, continues to rely on the effective presentation of information. The plethora of digital health data from electronic medical records, telehealth systems, and wearable devices necessitates innovative visualization approaches to inform decisions and policies.
-
-The science of data visualization has since matured, offering sophisticated representations of genomic, clinical, and personal health data to facilitate quick assimilation of information by diverse stakeholders.
-
-INCLUIR CONTEÚDO INCIAL DO BACKGROUND?
-
-\subsection{Real World Evidence}\label{real-world-evidence}
+\section{Real World Evidence}\label{real-world-evidence}
 
 Real-World Evidence (RWE) has emerged as a significant concept in healthcare, aiming to complement and extend the insights gained from Randomized Controlled Trials (RCTs). While RCTs are the gold standard for establishing causality and assessing the efficacy of new treatments under controlled conditions, they often do not reflect the full spectrum of patient profiles encountered in routine clinical practice. RWE seeks to fill this gap by analyzing the outcomes of treatments as they are used in everyday settings, encompassing a diverse population with varying genetic backgrounds, comorbidities, and concomitant medications \cite{soa1}. This approach aims to provide a more comprehensive understanding of how treatments perform in the real world, thereby addressing the efficacy-effectiveness gap noted by Eichler \textit{et al} (2017)\cite{soa2}.
 
@@ -27,19 +14,27 @@ The need for transparency extends to the sharing of data and code, facilitating 
 
 Wang et al. (2021) advocate for the harmonization and standardization of RWE practices to foster reproducibility and reliability in the field. This includes developing templates for planning and reporting that reduce inconsistencies and elevate the quality of RWE research. By adhering to these structured approaches and emphasizing transparency, the field of RWE can continue to provide valuable, nuanced insights into healthcare practices and outcomes, bridging the gap between clinical research and everyday medical care. The complexity of RWE findings necessitates not just textual explanation but also extensive visualizations. These visual tools are essential for illustrating the nuances of sub-analyses, sensitivity analyses, and other supplementary investigations, often accumulating into a substantial part of the supplementary material. Through detailed tables, figures, and a multitude of visual representations, researchers can offer a more transparent and digestible overview of their findings, aiding in the comprehension and further investigation of the intricate data landscapes characteristic of RWE studies \cite{soa5}.
 
+\section{Data Visualization in Healthcare}\label{data-visualization}
+
 \subsection{Visualization for Electronic Health Records (EHR)}\label{visualization-for-electronic-health-records-ehr}
 
 The paper "EHR STAR: The State-Of-the-Art in Interactive EHR Visualization" provides an up-to-date overview of the state-of-the-art in Electronic Health Record (EHR) visualization. It presents a comprehensive analysis of the literature and open access healthcare data sources related to EHR visualization, emphasizing the importance of this topic. The paper refers to the significance of EHRs in modern medicine, positioning them as a standard practice and highlighting the potential for innovative visual methods to support clinical decision-making and research. The poor usability of EHRs is also noted, with international publications reporting no significant improvements over time. The significance of interactive visualization applications that interface seamlessly with EHR systems is highlighted, particularly in facilitating dynamic exploration and rapid extraction of patient data for researchers \cite{soa8}.
 
-The EHR STAR project has developed an interactive EHR STAR Browser, which serves as a comprehensive platform containing relevant literature described in the corresponding review. This browser provides a user-friendly interface for accessing and visualizing EHR data, supporting dynamic exploration and rapid extraction of patient data for researchers \cite{soa8}.
+The EHR STAR project has developed an interactive EHR STAR Browser, which serves as a comprehensive platform containing relevant literature described in the corresponding review. This browser, accessible at https://ehr.wangqiru.com/, provides a user-friendly interface for accessing and visualizing EHR data, supporting dynamic exploration and rapid extraction of patient data for researchers \cite{soa8}.
 
-
+While the EHR STAR Browser and other similar platforms represent significant progress, it's important to note that there is extensive literature on EHR visualization focusing primarily on clinical decision support. However, this thesis' project concentrates on the unique aspects of visualization for research purposes, particularly in the context of healthcare, rather than the broader application of EHR visualizations in clinical care.
 
 \subsection{Research Oriented Visualizations}\label{research-oriented-visualizations}
 
-The focus of research primarily on EHR visualization within clinical interfaces has highlighted the need for visual tools that support clinical decisions. However, the development of visualizations dedicated to research purposes has been less prominent. This gap suggests an opportunity for further innovation and implementation of visualization tools tailored for research, potentially enhancing the efficiency and efficacy of healthcare data analysis.
+While Electronic Health Record (EHR) visualization within clinical interfaces has received considerable attention for its role in supporting clinical decisions, there has been a notably scant development of visualizations specifically tailored for broader research purposes. This notable paucity points to a significant gap and presents an opportunity for the innovation and implementation of more research-focused visualization tools that could enhance the efficiency and effectiveness of healthcare data analysis.
 
-\subsection{Advances in Interactive and Real-Time Visualization}\label{advances-in-interactive-and-real-time-visualization}
+In the aforementioned work of EHR STAR, a limited number of papers were categorized in a section related to Population Health Record (PopHR) \cite{soa6}. PopHR, as defined by Friedman and Parrish, focuses on health data of populations without storing identifiable information about individual patients \cite{soa22}. This type of dataset is closer to what might be needed in research, focusing on population metrics rather than individual-level observation data. However, the focus in these papers was more towards interpretability, understanding risk factors, and supporting public health decisions rather than aligning with the rigorous standards typically required for research paper publication.
+
+Specifically, Carroll et al.'s systematic review \cite{soa23} and Preim and Lawonn's survey \cite{soa12} offer insights into the field of visual analytics for public health, revealing significant gaps in the current state of art and underscoring the need for advanced support in public health visual analytics. These reviews and surveys emphasize the requirement for visual analytics solutions that are flexible and tailored to the unique and often complex nature of public health data, which is inherently high-dimensional and heterogeneous, containing various data types and often involving large populations.
+
+The tasks identified for public health experts and academics range from exploration, assessment, and pattern identification to more complex analyses like association and verification. They involve cooperative situations where interdisciplinary teams jointly analyze data, emphasizing the need for visual analytics systems that support such collaborative efforts. The requirement for these systems to provide an overview of the data, enable integration of expert knowledge, and support for association analysis and comparisons highlights the need for specialized, sophisticated tools in research-oriented visualizations.
+
+However, it's clear from the literature that while some tools and techniques have been developed, they often don't fully meet the specific demands of research-oriented tasks, especially in terms of facilitating publication-ready outputs. The visualizations in public health are often used for interpretative and exploratory purposes, aiding in hypothesis generation, understanding distributions, and identifying abnormal patterns or interesting subpopulations. While this is invaluable in its own right, there's a distinct need for tools and methods that cater specifically to the research community's needs, aligning with the standards for research publication and offering capabilities beyond what's typically used in clinical or public health settings.
 
 \subsection{Challenges in Healthcare Data Visualization}\label{challenges-in-healthcare-data-visualization}
 
@@ -53,21 +48,20 @@ Healthcare data visualization is an evolving discipline that faces a multitude o
 \hline
 \textbf{Challenge} & \textbf{Description} & \textbf{References} \\ \hline
 Multidisciplinary Research Themes & Need for expertise in multiple domains such as visualization, NLP, and ML, making scope definition and organization challenging. & \cite{soa9} \\ \hline
-Data Protection Laws & Stringent requirements of GDPR and HITECH significantly complicate data acquisition and navigating legal and ethical constraints. & \cite{soa11, soa10} \\ \hline
+Data Protection Laws & Stringent requirements of GDPR and HITECH significantly complicate data acquisition and navigating legal and ethical constraints. & \cite{soa9, soa11, soa10} \\ \hline
 Accessibility of Open Datasets & Privacy concerns limit the availability of open datasets crucial for developing and refining visualization tools. & \cite{soa9} \\ \hline
-Necessity for Customized Visualization Tools & Requirement to work with processed data or aggregate parameters demands highly customizable visualization tools. & \cite{soa12, soa13} \\ \hline
+Need for Customized Visualization Tools & Requirement to work with processed data or aggregate parameters demands highly customizable visualization modalities. & \cite{soa12, soa13} \\ \hline
 Data Heterogeneity and High-Dimensionality & Varied and complex nature of healthcare data makes standard visualization tools insufficient. & \cite{soa12, soa13} \\ \hline
 Resistance to Adoption & Resistance from clinical professionals due to lack of expertise in complex computer systems, including visualization tools. & \cite{soa14} \\ \hline
 Bureaucratic Barriers to Data Access & Time-consuming registration and verification processes hinder efficient data utilization. & \cite{soa15} \\ \hline
-Data Interoperability & Absence of uniform health data standards prevents seamless data exchange and integration across systems. & \cite{soc21} \\ \hline
+Data Interoperability & Absence of uniform health data standards prevents seamless data exchange and integration across systems. & \cite{soa21} \\ \hline
 Big Data Challenges & Traditional visualization methods struggle to handle the volume, variety, and velocity of big healthcare data. & \cite{soa13} \\ \hline
 Visual Analytics Development & Lack of understanding and availability of advanced methods to address complex questions limits progress in visual analytics. & \cite{soa17, soa18} \\ \hline
 Information Overload & Risk of ignoring or misinterpreting crucial data due to overwhelming quantity and complexity of information. & \cite{soa19, soa20} \\ \hline
 \end{tabular}
 \end{table}
 
-
-One of the inherent is the multidisciplinary nature of the research themes involved. Projects often require expertise in visualization, Natural Language Processing (NLP), and Machine Learning (ML), making it difficult to establish a well-defined classification and scope to organize the previous knowledge effectively \cite{soa9}.
+One of the inherent challenges is the multidisciplinary nature of the research themes involved. Projects often require expertise in visualization, Natural Language Processing (NLP), and Machine Learning (ML), making it difficult to establish a well-defined classification and scope to organize the previous knowledge effectively \cite{soa9}.
 
 The sensitive nature of electronic healthcare data adds another layer of complexity, necessitating strict adherence to data protection laws such as GDPR \cite{soa11} in Europe and HITECH \cite{soa10} in the United States of America. This legal and ethical landscape can significantly complicate data acquisition for research, often requiring researchers and institutions to navigate a maze of regulatory requirements \cite{soa9}.
 
@@ -82,7 +76,7 @@ As explained before, visualization tools must operate on aggregate data or summa
 
 Resistance from clinical professionals, often stemming from a lack of expertise in complex computer systems including visualization, has been identified as a primary barrier to the adoption and deployment of EHR visualization systems within clinical environments \cite{soa14}. This resistance is compounded by the challenges researchers face in accessing EHR data due to time-consuming registration and verification processes required by some data providers \cite{soa15}. The necessity for automation becomes apparent in this context. Automated systems can streamline the data visualization process, enabling researchers to bypass the repetitive and time-consuming steps involved in data preparation and visualization.
 
-Achieving data interoperability in healthcare is an ongoing challenge, as widespread adoption of uniform health data standards is yet to be realized. This lack of consensus on a standardized format for health data, including Electronic Health Records (EHR), impedes seamless data exchange and integration across various healthcare systems \cite{soc21}.
+Achieving data interoperability in healthcare is an ongoing challenge, as widespread adoption of uniform health data standards is yet to be realized. This lack of consensus on a standardized format for health data, including Electronic Health Records (EHR), impedes seamless data exchange and integration across various healthcare systems \cite{soa21}.
 
 Moreover, traditional data visualization methods are often inadequate for handling the sheer volume of big data in healthcare. Many datasets are too large to fit into memory or are distributed across clusters, posing significant challenges to meaningful and valuable presentation \cite{soa13}. Real-time analysis of such complex data is increasingly important, and factors such as data value and veracity must be considered \cite{soa13}.
 
@@ -92,14 +86,44 @@ Information overload further complicates the landscape. With the abundance of va
 
 Addressing these challenges requires an interdisciplinary approach, combining advances in computational techniques with a deep understanding of the clinical context. It also necessitates the development of new tools and methods that can handle the volume, variety, and complexity of healthcare data while ensuring that the insights derived are both accurate and actionable.
 
-\subsubsection{Data Complexity and Heterogeneity}\label{data-complexity-and-heterogeneity}
-\subsubsection{Privacy and Security in Health Data}\label{privacy-and-security-in-health-data}
-\subsubsection{Scalability and Performance in Visualization Tools}\label{scalability-and-performance-in-visualization-tools}
-
 \subsection{Comparative Analysis of Visualization Tools}\label{comparative-analysis-of-visualization-tools}
-\subsubsection{Evaluation of Existing Solutions}\label{evaluation-of-existing-solutions}
-\subsubsection{Gaps and Opportunities for Visual Viper}\label{gaps-and-opportunities-for-visual-viper}
 
-\subsection{Future Directions in Healthcare Visualization}\label{future-directions-in-healthcare-visualization}
-\subsubsection{Emerging Technologies and Approaches}\label{emerging-technologies-and-approaches}
-\subsubsection{Anticipated Challenges and Solutions}\label{anticipated-challenges-and-solutions}
+In this section, we explore different visualization tools and assess their suitability for healthcare data visualization, particularly in the context of research. Each sub-section offers a comparative analysis of popular tools like Tableau, Power BI, and Grafana, outlining their strengths, weaknesses, and unique features. The goal is to identify gaps that VV aims to fill and highlight opportunities for enhancing the visualization of healthcare data, especially for research-oriented tasks. This comparative analysis will inform the development and positioning of VV in the landscape of data visualization tools.
+
+\subsubsection{Tableau}\label{tableau}
+
+Tableau, a robust business intelligence and data visualization tool, has been gaining attention for its application in various industries, including healthcare. It serves a critical role in presenting complex data analyses in intuitive and insightful ways, facilitating the whole process from data collection to sharing.
+
+Ko and Chang (2017) developed a tutorial on interactive visualization of healthcare data using Tableau that provides comprehensive insights and guidance on implementing Tableau in healthcare contexts \cite{soa26}. This resource provides valuable instructions and examples for beginners looking to explore Tableau's capabilities in the healthcare domain.
+
+While Tableau is capable of powerful and insightful visualizations, its suitability for healthcare research needs to be carefully considered.
+
+For instance, creating forest plots, a common visualization in medical research to display the strength of treatment effects in meta-analysis studies, is not straightforward in Tableau. It requires inventive solutions and workarounds, such as using Gantt charts to represent confidence intervals, as described in the example available in \cite{soa24}. While Tableau's extensions API provides a pathway to create custom visualizations (see \cite{soa25}), the labor and expertise required to develop these from scratch are substantial, often equating to the effort needed to develop an entirely new module for a specialized tool like Visual-Viper.
+
+Additionally, the dynamic nature of healthcare data, with varying numbers of covariates or cohorts across different studies, poses a significant challenge. Each model's output might require specific post-processing to fit into Tableau's visualization framework, which is primarily designed for more standardized data structures. This means that adapting Tableau to specific research needs often involves a high degree of customization and technical maneuvering.
+
+Despite these challenges, Tableau offers several advantages that make it a popular choice in many data-driven industries. Its user-friendly interface, extensive visualization capabilities, and strong support community are considerable assets. However, the cost can be a barrier for some research institutions or individual researchers, and performance may lag when handling particularly large or complex datasets.
+
+\subsubsection{Power BI}\label{power-bi}
+
+Power BI, part of the Microsoft ecosystem, is increasingly recognized for its robust capabilities in healthcare data visualization, as described in the use-case description by Virani et al (2023) \cite{soa27}. It seamlessly integrates with other Microsoft products that are already in use in many healthcare institutions in Portugal and offers a cost-effective solution with a free version available. While it has a steeper learning curve and the advanced features require a subscription, its integration within the Microsoft environment can be particularly beneficial in settings already using Microsoft tools. Despite these considerations, Power BI's comprehensive features and competitive pricing make it a viable option for healthcare data visualization, though its adoption may require a more in-depth understanding to fully leverage its capabilities.
+
+Power BI facilitates the development of custom visualizations through its API, allowing for tailored solutions as described in \cite{soa28}. Moreover, it enables export of reports programmatically \cite{soa29}. However, despite these capabilities, Power BI, like Tableau, is not inherently designed for the extensive automation required in producing hundreds of publication-ready charts. Its standard features might not suffice for the high customization needed for research outputs or for providing a deployment of image files for non-technical individuals involved in the publication process to process and include in the dissemination materials.
+
+This underscores the necessity for more specialized tools that can meet the rigorous demands of creating and revising numerous, complex visualizations in healthcare research publications.
+
+\subsubsection{Grafana}\label{grafana}
+
+Grafana, known for its open-source nature and extensive plugin ecosystem, is a tool for creating interactive dashboards and visualizations.
+
+Despite its strengths in customizability and real-time monitoring, there is a notable lack of scientific publications specifically addressing its application in visualizing large healthcare data from electronic records.
+
+Grafana is optimized for time-series data visualization and may not suit other types of healthcare data. It presents a steep learning curve for non-technical users. Similar to other tools, Grafana struggles with non-standardized healthcare data, like model summaries, and lacks efficient mechanisms for automated exporting of complex, publication-ready visualizations.
+
+\subsection{Gaps and Opportunities for Visual Viper}\label{gaps-and-opportunities-for-visual-viper}
+
+The analysis of existing visualization tools emphasizes the need for solutions like VV, which caters to the complexity and customization essential in healthcare research.
+
+Specifically, there is a demand for tools adept at producing publication-ready outputs and adeptly managing non-standardized data, such as the complex reports of model summaries.
+
+VV is designed to meet these needs within healthcare research.
